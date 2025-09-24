@@ -1,0 +1,43 @@
+.quem-somos-header {
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sobre, .diferenciais {
+    margin-bottom: 40px;
+}
+
+.sobre h1,
+.diferenciais h1 {
+    color: #1c2120;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.diferencial h2 {
+    font-size: 22px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.diferencial p,
+.sobre p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.quem-somos-footer {
+    text-align: center;
+    background-color: #1c2120;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+}

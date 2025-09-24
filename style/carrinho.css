@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Serif+Text:ital@0;1&family=Libertinus+Math&family=Libertinus+Mono&family=Roboto+Slab:wght@100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #adadad;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: weight;
+  font-style: normal;
+}
+
+
+header{
+  background: #222;
+  padding: 10px 0;
+  text-align: center;
+
+  img{
+    width: 60px;
+  }
+
+  display: flex;
+  justify-content: center;
+}
+
+
+
+  
+
+
+
+main{
+  background: #fff;
+  padding: 0 30px;
+
+  .page-title{
+    font-size: 40px;
+    padding: 50px 0;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .content{
+    display: flex;
+    padding: 20px;
+
+
+    section{
+      flex: 1;
+    }
+
+    aside{
+      color: #fff;
+      font-size: 20px;
+     background:#1c2120;
+     padding: 9px;
+     border-radius: 20px;
+    }
+  }
+}
