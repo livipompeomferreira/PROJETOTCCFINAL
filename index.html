@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de maquiagem</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <div class="sobreheader">
+        <h3>10% de desconto na primeira compra com cupom</h3>
+    </div>
+
+    <header>
+        <section>   
+            <div>
+                <p>
+                    <img src="assets/ICONES/Lupa.png" alt="" height="30px"   style="padding-right: 5px; padding: 0.5px; " >
+                    <input id="Carrinho" type="text" placeholder="O que procura?" class="linha"/>
+                </p>
+                <p id="resposta"></p>
+                <script>
+                    function mostrar() {
+                        let valor = document.getElementById("texto").value;
+                        document.getElementById("resposta").innerText = valor;
+                    }
+                </script>
+            </div>
+        </section>
+        <section>
+            <div>
+                <a href="index.html">
+                <img src="./assets/LOGO SITE PNG.png" alt="" height="150px" class="logo">
+                </a>
+            </div>
+        </section>
+        <section>
+            <div>
+                <a href="perfil.html">
+                <img src="assets/ICONES/perfil.png" alt="" height="40px" style="padding-top: 40px;">
+                </a>
+
+                <a href="carrinho.html">
+                <img src="assets/ICONES/Carrinho.png" alt="" height="40px" style="padding-top: 40px;">
+                </a>
+
+            </div>
+        </section>
+    </header>
+
+    <hr>
+
+    <main>
+        <h1 class="section-title">Com as ofertas e promoções na makeup.com você encontra tudo o que precisa</h1>
+
+        <section class="banner" >
+            <img src="./assets/INFLUENCIADORAS/Foto inicial tcc.jpg" alt="" width="1800px" height="679px">
+        </section>
+
+        <h2 class="section-title">Cupons de até 50% de desconto.</h2>
+        <h3 class="subtitulo">Venha visitar o nosso site com uma proposta econômica e mais acessível.</h3>
+
+        <section class="grid">
+            <a href="produtos bocarosa.html">
+            <div class="grid-item"><strong>Boca Rosa</strong><br><img src="assets/INFLUENCIADORAS/Boca Rosa quadrado.png" alt="" width="300px"></div>
+            </a>
+
+            <a href="produtos brunatavares.html">
+            <div class="grid-item"><strong>Bruna Tavares</strong><br><img src="assets/INFLUENCIADORAS/Bruna Tavares quadrado.png" alt="" width="300px"></div>
+            </a>
+
+            <a href="produtos fran.html">
+            <div class="grid-item"><strong>Franciny Elhke</strong><br><img src="assets/INFLUENCIADORAS/Fran quadrado.png" alt="" width="300px"></div>
+            </a>
+
+            <a href="produtos marimaria.html">
+            <div class="grid-item"><strong>Mari Maria</strong><br><img src="assets/INFLUENCIADORAS/Mari Maria quadrado.png" alt="" width="300px"></div>
+            </a>
+        </section>
+
+        <hr>
+
+        <h1 class="section-title">Lançamentos</h1>
+
+        <section class="grid">
+            <div class="grid-item">
+                <strong>GLOSS FRAN BY FRANCINY<br>EHLKE LIP BUNNY</strong><br>
+                <a href="./produtos fran.html">
+                <img src="./assets/Designer para o tcc/PRODUTOS DIMENSÕES CORRETAS/GLOSS FRAN BY FRANCINY EHLKE LIP BUNNY.png" alt="" height="377px" width="300px">
+            </a>
+            </div>
+            <div class="grid-item">
+                <strong>ILUMINADOR LIQUIDO BT HELLO KITTY<br>BRUNA TAVARES</strong><br>
+                <a href="produtos brunatavares.html">
+                <img src="./assets/Designer para o tcc/PRODUTOS DIMENSÕES CORRETAS/imagem 2 produto em lançamento.png" alt="" width="300px">
+            </a>
+            </div>
+            <div class="grid-item">
+                <strong>BASE STICK PELE<br>BOCA ROSA</strong><br>
+                <a href="produtos bocarosa.html">
+                <img src="./assets/Designer para o tcc/PRODUTOS DIMENSÕES CORRETAS/Esponja Para Maquiagem 9.1 1.png" alt="" width="300px">
+            </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <link rel="stylesheet" href="footer.css">
+        <section class="footer-container">
+    <div class="footer-column">
+      <h2>By Makeup.com</h2>
+      <nav class="social-media">
+        <a href="#" aria-label="Instagram">
+          <img src="./assets/Designer para o tcc/ICONES/logo instagram branco-sem fundo.png" alt="Instagram">
+        </a>
+        <a href="#" aria-label="facebook">
+          <img src="./assets/Designer para o tcc/ICONES/logo facebook branco-sem fundo.png" alt="facebook">
+        </a>
+      </nav>
+    </div>
+
+    <div class="footer-column">
+      <h3>Precisa de ajuda?</h3>
+      <ul>
+        <li><a href="Políticadeprivacidade.html">Política de privacidade</a></li>
+        <li><a href="Políticadetrocasedevoluções.html">Política de trocas e devoluções</a></li>
+        <li><a href="Políticadeentrega.html">Política de entrega</a></li>
+        <li><a href="Faleconosco.html">Fale conosco</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Atendimento</h3>
+      <p><a href="QuemSomos.html">Quem somos?</a></p>
+      <p>E-mail: <a href="mailto:atendimento@makeup.com">atendimento@makeup.com</a></p>
+      <p>Segunda a Sexta-feira, das 9h às 18h</p>
+    </div>
+  </section>
+
+  <section class="footer-bottom">
+      <img src="./assets/Designer para o tcc/ICONES/Formas de pagamento branco-sem fundo.png" alt="Visa" width="550px" >
+    </div>
+  </section>
+</footer>
+
+
+  
+</body>
+</html>

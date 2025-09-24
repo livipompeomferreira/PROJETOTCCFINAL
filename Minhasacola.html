@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha sacola</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/Minhasacola.css">
+</head>
+<body>
+
+    <div class="sobreheader">
+        <h3>15% de desconto na primeira compra com cupom</h3>
+    </div>
+
+    <header>
+        <section class="busca">
+            <div>
+                <img src="assets/ICONES/Lupa.png" alt="Lupa" height="30px" style="padding-right: 10px;">
+                <input id="Carrinho" type="text" placeholder="O que procura?" class="linha"/>
+                <p id="resposta"></p>
+            </div>
+        </section>
+
+        <section class="logo">
+            <a href="index.html">
+            <img src="./assets/LOGO SITE PNG.png" alt="Logo" height="150px">
+            </a> 
+        </section>
+
+        <section class="icones">
+            <img src="assets/ICONES/perfil.png" alt="Perfil" height="40px" style="padding-top: 40px;">
+            <img src="assets/ICONES/Carrinho.png" alt="Carrinho" height="40px" style="padding-top: 40px;">
+        </section>
+    </header>
+    <body>
+
+            <div class="produto">
+                <img src="./assets/Designer para o tcc/PRODUTOS DIMENSÕES CORRETAS/Pó Compacto Translúcido 11.1 1.png" alt="Produto">
+                <div class="produto-info">
+                    <div class="produto-nome">Pó Compacto Translúcido</div>
+                    <div class="produto-preco">R$ 72,90</div>
+                </div>
+                <div class="qtd">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+            </div>
+        
+            <div class="produto">
+                <img src="./assets/Designer para o tcc/PRODUTOS DIMENSÕES CORRETAS/SÉRUM C10 FRAN BY FRANCINY EHLKE 3.1 1.png" alt="Produto">
+                <div class="produto-info">
+                    <div class="produto-nome">Sérum C10</div>
+                    <div class="produto-preco">R$ 74,90</div>
+                </div>
+                <div class="qtd">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+            </div>
+        
+            <div class="barra-frete">
+                Faltam R$ 200,00 para ganhar frete grátis!
+                <div class="progress">
+                    <div></div>
+                </div>
+            </div>
+        
+            <div class="total">
+                <div class="total-item">
+                    <span>SUBTOTAL</span>
+                    <span>R$ 147,80</span>
+                </div>
+                <div class="total-item">
+                    <span>FRETE</span>
+                    <span>6,00</span>
+                </div>
+                <div class="total-item">
+                    <strong>TOTAL</strong>
+                    <strong>R$ 153,80</strong>
+                </div>
+        
+                <button class="btn-finalizar">FINALIZAR COMPRA</button>
+                <button class="btn-continuar">CONTINUAR COMPRANDO</button>
+            </div>
+        </div>
+        
+        <script>
+        const abrir = document.getElementById('abrirCarrinho');
+        const fechar = document.getElementById('fecharCarrinho');
+        const carrinho = document.getElementById('carrinho');
+        const overlay = document.getElementById('overlay');
+        
+        abrir.addEventListener('click', () => {
+            carrinho.classList.add('aberto');
+            overlay.style.display = 'block';
+        });
+        
+        fechar.addEventListener('click', () => {
+            carrinho.classList.remove('aberto');
+            overlay.style.display = 'none';
+        });
+        
+        overlay.addEventListener('click', () => {
+            carrinho.classList.remove('aberto');
+            overlay.style.display = 'none';
+        });
+        </script>
+        
+</body>
+</html>
