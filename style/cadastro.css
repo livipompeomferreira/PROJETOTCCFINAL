@@ -1,131 +1,58 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1C2120;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.center-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-
-.login-box {
-  background-color: #fff;
-  width: 1100px;     /* aumentei a largura */
-  height: auto;     /* altura automática para adaptar ao conteúdo */
-  max-height: 700px; 
-  padding: 2rem;
-  border-radius: 4rem;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  text-align: center;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto; /* adiciona scroll vertical se passar do max-height */
-
-
-  /* Flex para centralizar conteúdo */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  /* Fundo do scroll dentro da caixa */
-  background-clip: padding-box; 
-}
-
-/* Scrollbar para WebKit */
-.login-box::-webkit-scrollbar {
-  width: 12px;
-  background-color: transparent; /* fundo transparente para não “quebrar” a borda da caixa */
-}
-
-.login-box::-webkit-scrollbar-thumb {
-  background-color: #999;
-  border-radius: 8px;
-  border: 3px solid #fff;  /* borda branca dentro do polegar, para destacar */
-}
-
-/* Scrollbar para Firefox */
-.login-box {
-  scrollbar-width: thin;
-  scrollbar-color: #999 transparent;
-}
-
-/* Cabeçalhos */
-.login-box h1 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #1C2120;
-}
-
-.login-box p {
-    margin: 0.5rem 0;
-    color: #444;
-}
-
-/* Inputs */
-form input {
-    width: 100%;
-    padding: 0.75rem;
-    margin: 0.5rem 0;
-    border-radius: 0.5rem;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-}
-
-/* Botão */
-button {
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c2120;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 50px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 60px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form input {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1c2120;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        form button:hover {
+            background-color: #121614;
+        }
+        
+        
+.register-link{
     margin-top: 1rem;
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #1C2120;
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    font-size: 0.9rem;
 }
 
-button:hover {
-    background-color: #333;
+.register-link a {
+    color: #1C2120;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* Centralização do cabeçalho */
-header {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    margin-bottom: 1.5rem;
+.register-link a:hover{
+    text-decoration: underline;
 }
-
-/* Responsivo (opcional) */
-@media (max-width: 600px) {
-    .login-box {
-        padding: 1rem;
-    }
-}
-
