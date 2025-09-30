@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Serif+Text:ital@0;1&family=Libertinus+Math&family=Libertinus+Mono&family=Roboto+Slab:wght@100..900&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -6,29 +7,42 @@
 
 body{
   background: #adadad;
-    font-family: "Cormorant Garamond", serif;
-    font-weight: weight;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: weight;
   font-style: normal;
 }
 
 
-header{
-  background: #222;
-  padding: 10px 0;
-  text-align: center;
-
-  img{
-    width: 60px;
-  }
-
+header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  gap: 20px;
+  border-bottom: 1px solid;
+  font-weight: bold;
 }
 
+.sobreheader {
+  background-color: #1C2120;
+  color: rgba(255, 255, 255, 0.87);
+  text-align: center;
+  padding: 0px;
+  height: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  text-decoration: underline;
+}
 
-
-  
-
+.img{
+    width: 60px;
+    display: flex;
+    justify-content: center;
+  }
 
 
 main{
@@ -42,21 +56,23 @@ main{
     font-weight: bold;
   }
 
-  .content{
-    display: flex;
-    padding: 20px;
 
 
-    section{
-      flex: 1;
-    }
+  h1, h3 {
+    text-align: center;
+    font-weight: normal;
+    margin: 3px 0;
+    
+  
+  }
+  
 
-    aside{
-      color: #fff;
-      font-size: 20px;
-     background:#1c2120;
-     padding: 9px;
-     border-radius: 20px;
-    }
+aside{
+  color: #fff;
+  font-size: 20px;
+  background:#1c2120;
+  padding: 9px;
+  border-radius: 20px;
   }
 }
+
