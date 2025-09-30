@@ -35,7 +35,7 @@ function buscarCEP() {
     if (cep.length !== 8) return;
 
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
-    .then(response => response.json())
+    .then(response =>  response.json())
     .then(data => {
         if (!data.erro) {
             document.querySelector('input[name="endereco"]').value = data.logradouro || '';

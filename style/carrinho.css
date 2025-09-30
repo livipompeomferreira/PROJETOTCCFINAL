@@ -76,3 +76,25 @@ aside{
   }
 }
 
+
+
+.linha {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  padding: 4px;
+  width: 150px;
+}
+
+.linha {
+
+  outline: none;
+  padding: 0px 10px ;
+  width: 130px;
+  border-radius: 20px;
+  height: 20px;
+  font-weight: bold;
+   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.244);
+  
+  
+}
