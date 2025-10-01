@@ -11,20 +11,55 @@
     <div class="container">
         <h1>Cadastro de Clientes</h1>
       
-        <form method="POST">
-            <input type="text" name="nome" placeholder="Nome" required>
-            <input type="text" name="cpf" placeholder="CPF">
-            <input type="text" name="telefone" placeholder="Telefone">
-            <input type="text" name="cep" placeholder="CEP">
-            <input type="text" name="endereco" placeholder="Endereço">
-            <input type="text" name="numero" placeholder="Número">
-            <input type="text" name="bairro" placeholder="Bairro">
-            <input type="text" name="cidade" placeholder="Cidade">
-            <input type="text" name="estado" placeholder="Estado">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="senha" placeholder="Senha" required>
-            <button type="submit">Cadastrar</button>
-        </form>
+<form id="form-cadastro">
+    <input type="text" name="nome" placeholder="Nome" required>
+    <input type="text" name="cpf" placeholder="CPF">
+    <input type="text" name="telefone" placeholder="Telefone">
+    <input type="text" name="cep" placeholder="CEP">
+    <input type="text" name="endereco" placeholder="Endereço">
+    <input type="text" name="numero" placeholder="Número">
+    <input type="text" name="bairro" placeholder="Bairro">
+    <input type="text" name="cidade" placeholder="Cidade">
+    <input type="text" name="estado" placeholder="Estado">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="senha" placeholder="Senha" required>
+    <button type="submit">Cadastrar</button>
+</form>
+
+<script>
+const form = document.getElementById("form-cadastro");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // evita recarregar a página
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+        const res = await fetch("http://localhost:3000/cadastro", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+
+        if (res.ok) {
+            alert(result.mensagem); // sucessohttp://localhost:3000/cadastro
+
+            form.reset();
+        } else {
+            alert("Erro: " + result.erro);
+        }
+    } catch (err) {
+        console.error("Erro ao enviar cadastro:", err);
+        alert("Erro ao enviar cadastro.");
+    }
+});
+</script>
+
+
+
            <p class="register-link">já possui uma conta? <a href="perfil.html">fazer login</a></p>
     </div>
 </div>
