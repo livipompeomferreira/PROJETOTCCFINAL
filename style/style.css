@@ -121,14 +121,16 @@ h1, h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 100px;
+
   text-align: center;
   padding: 20px;
+  
 }
 
 .grid-item {
   flex: 1 1 300px;
   max-width: 300px;
+  margin-left: 20px;
 
 }
 
@@ -139,6 +141,7 @@ h1, h3 {
   transition: transform 0.3s ease;
   border-radius: 20px;
   box-shadow: 2px 5px 15px #000;
+  margin-top: 20px;
 }
 
 .grid-item img:hover {
