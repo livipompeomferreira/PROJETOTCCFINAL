@@ -121,7 +121,7 @@ h1, h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 35px;
+  gap: 100px;
   text-align: center;
   padding: 20px;
 }
@@ -129,10 +129,11 @@ h1, h3 {
 .grid-item {
   flex: 1 1 300px;
   max-width: 300px;
+
 }
 
 .grid-item img {
-  width: 100%;
+ 
   max-width: 300px;
   height: auto;
   transition: transform 0.3s ease;
