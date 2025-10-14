@@ -306,3 +306,64 @@ footer img {
 .banner, .section-title, .subtitulo {
   text-align: center;
 }
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin: 40px 0;
+}
+
+.grid-item {
+  position: relative;
+  width: 280px;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: scale(1.03);
+}
+
+/* Imagem da influenciadora */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Card com descrição */
+.info-card {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fff, #f6f6f6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: right 0.5s ease;
+}
+
+/* Efeito hover: imagem desliza e card aparece */
+.grid-item:hover .image-container img {
+  transform: translateX(-100%);
+}
+
+.grid-item:hover .info-card {
+  right: 0;
+}
