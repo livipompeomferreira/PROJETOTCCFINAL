@@ -319,7 +319,7 @@ footer img {
 
 .grid-item {
   position: relative;
-  width: 280px;
+  width: 300px;
   height: 380px;
   overflow: hidden;
   border-radius: 20px;
@@ -327,6 +327,7 @@ footer img {
   text-decoration: none;
   color: #000;
   transition: transform 0.3s ease;
+  
 }
 
 .grid-item:hover {
@@ -335,10 +336,10 @@ footer img {
 
 /* Imagem da influenciadora */
 .image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 270px;
+  
   transition: transform 0.5s ease;
+ 
 }
 
 /* Card com descrição */
@@ -348,13 +349,13 @@ footer img {
   right: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #fff, #f6f6f6);
+  background: linear-gradient(135deg, #1c2120, #fff);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
   transition: right 0.5s ease;
 }
