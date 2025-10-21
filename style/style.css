@@ -318,7 +318,11 @@ footer img {
   right: -100%;
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
+  background: linear-gradient(135deg, #fff, #fff);
+=======
   background: linear-gradient(135deg, #fff);
+>>>>>>> 18bb917d9b82f0fd143764236039b8a0a8e1b563
   display: flex;
   flex-direction: column;
   justify-content: center;
