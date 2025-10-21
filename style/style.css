@@ -7,15 +7,15 @@ a {
 }
 
 .linha {
-  border: 30px  solid #1c2120;
   border-bottom: 10px solid #1c2120;
   outline: none;
-  padding: 10px 10px ;
+  padding: 5px;
   width: 130px;
   border-radius: 20px;
   height: 20px;
   font-weight: bold;
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.244);
+  border: none;
 }
 
 .grid {
@@ -249,15 +249,6 @@ footer img {
   text-align: center;
   padding: 20px;
   gap: 20px;
-}
-
-
-.linha {
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-  padding: 5px;
-  width: 120px;
 }
 
 .grid {

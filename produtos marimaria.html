@@ -14,25 +14,39 @@
 </div>
 
 <header>
-    <section class="busca">
+    <section>   
         <div>
-            <img src="assets/ICONES/Lupa.png" alt="Lupa" height="30px" style="padding-right: 10px;" />
-            <input id="Carrinho" type="text" placeholder="O que procura?" class="linha" />
+            <p>
+                <img src="assets/ICONES/Lupa.png" alt="" height="30px" style="padding-right: 5px; padding: 0.5px; " >
+                <input id="Carrinho" type="text" placeholder="O que procura?" class="linha"/>
+            </p>
             <p id="resposta"></p>
+            <script>
+                function mostrar() {
+                    let valor = document.getElementById("texto").value;
+                    document.getElementById("resposta").innerText = valor;
+                }
+            </script>
         </div>
     </section>
-
-    <section class="logo">
-        <a href="index.html">
-            <img src="./assets/LOGO SITE PNG.png" alt="Logo" height="150px" />
-        </a>
+    <section>
+        <div>
+            <a href="index.html">
+            <img src="./assets/LOGO SITE PNG.png" alt="" height="150px" class="logo">
+            </a>
+        </div>
     </section>
+    <section>
+        <div>
+            <a href="perfil.html">
+            <img src="assets/ICONES/perfil.png" alt="" height="40px" style="padding-top: 40px;">
+            </a>
 
-    <section class="icones">
-        <img src="assets/ICONES/perfil.png" alt="Perfil" height="40px" style="padding-top: 40px;" />
-        <a href="carrinho.php">
-            <img src="assets/ICONES/Carrinho.png" alt="Carrinho" height="40px" style="padding-top: 40px;" />
-        </a>
+            <a href="carrinho.html">
+            <img src="assets/ICONES/Carrinho.png" alt="" height="40px" style="padding-top: 40px;">
+            </a>
+
+        </div>
     </section>
 </header>
 
