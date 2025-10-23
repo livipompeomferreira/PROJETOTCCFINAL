@@ -1,17 +1,21 @@
 {
   "name": "projetotccfinal",
   "version": "1.0.0",
-  "description": "https://livipompeomferreira.github.io/PROJETOTCCFINAL/index.html",
-  "main": "index.js",
+  "type": "module",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "mysql2": "^3.15.3"
+    "mssql": "^10.0.4",
+    "mysql2": "^3.15.3",
+    "tedious": "^14.7.0"
   }
 }
