@@ -24,21 +24,14 @@ a {
   justify-content: center;
   gap: 40px;
   text-align: center;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 40px 0;
 }
 
 .banner, .section-title, .subtitulo {
   text-align: center;
   animation: glowIn 1.5s ease-out;
-}
-
-.grid-itembr{
-  transition: transform 0.3s ease;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-  
-}
-
-.grid-itembr:hover{
-  transform: scale(1.02);
 }
 
 body {
@@ -50,7 +43,6 @@ body {
   align-items: center;
 }
 
-  
 header {
   display: flex;
   justify-content: space-around;
@@ -67,12 +59,9 @@ header {
 
 .sobreheader {
   background-color: #1C2120;
-  color: rgba(255, 255, 255, 0.87);
-  text-align: center;
-  padding: 0px;
+  color: #fff;
   height: 30px;
   width: 100%;
-  box-sizing: border-box;
   text-decoration: underline;
 }
 
@@ -82,29 +71,30 @@ h1, h3 {
   margin: 3px 0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto;
+.logo{
+  height: 150px;
 }
 
-
-.grid {
+.logo img{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-
+  align-items: center;
 }
 
 .grid-item {
   flex: 1 1 300px;
   max-width: 300px;
   margin-left: 50px;
+  position: relative;
+  width: 300px;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.3s ease;
 }
 
 .grid-item img {
- 
   max-width: 300px;
   height: auto;
   transition: transform 0.3s ease;
@@ -117,13 +107,11 @@ h1, h3 {
   transform: scale(1.01);
 }
 
-
 .banner {
   width: 100%;
   max-width: 1800px;
   margin: 20px 0;
 }
-
 
 .banner img {
   transition: 1s;
@@ -222,7 +210,6 @@ footer a:hover {
   border: none;
 }
 
-
 button {
   background-color: #1c2120;
   color: #fff;
@@ -231,7 +218,6 @@ button {
   border: none;
   cursor: pointer;
 }
-
 
 footer img {
   margin: 5px;
@@ -251,58 +237,21 @@ footer img {
   gap: 20px;
 }
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 35px;
+.banner, .section-title {
   text-align: center;
+  font-weight: bold;
 }
 
-.grid-item {
-  flex: 1 1 300px;
-}
-
-.banner, .section-title, .subtitulo {
-  text-align: center;
-}
-
-
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  margin: 40px 0;
-}
-
-.grid-item {
-  position: relative;
-  width: 300px;
-  height: 380px;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  text-decoration: none;
-  color: #000;
-  transition: transform 0.3s ease;
-  
-}
 
 .grid-item:hover {
   transform: scale(1.03);
 }
 
-/* Imagem da influenciadora */
 .image-container img {
   width: 270px;
-  
   transition: transform 0.5s ease;
- 
 }
 
-/* Card com descrição */
 .info-card {
   position: absolute;
   top: 0;
@@ -324,7 +273,6 @@ footer img {
   transition: right 0.5s ease;
 }
 
-/* Efeito hover: imagem desliza e card aparece */
 .grid-item:hover .image-container img {
   transform: translateX(-100%);
 }
