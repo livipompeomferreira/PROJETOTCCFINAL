@@ -62,34 +62,31 @@ form.addEventListener("submit", async (e) => {
 
            <p class="register-link">já possui uma conta? <a href="perfil.html">fazer login</a></p>
     </div>
-</div>
+    </div>
 
-<script>
-function buscarCEP() {
-    const cep = document.querySelector('input[name="cep"]').value.replace(/\D/g, '');
-    if (cep.length !== 8) return;
+    <script>
+    function buscarCEP() {
+        const cep = document.querySelector('input[name="cep"]').value.replace(/\D/g, '');
+        if (cep.length !== 8) return;
 
-    fetch(`https://viacep.com.br/ws/${cep}/json/`)
-    .then(response =>  response.json())
-    .then(data => {
-        if (!data.erro) {
-            document.querySelector('input[name="endereco"]').value = data.logradouro || '';
-            document.querySelector('input[name="bairro"]').value = data.bairro || '';
-            document.querySelector('input[name="cidade"]').value = data.localidade || '';
-            document.querySelector('input[name="estado"]').value = data.uf || '';
-        } else {
-            alert('CEP não encontrado!');
-        }
-    })
-    .catch(err => {
-        console.error('Erro ao buscar CEP:', err);
-    });
-}
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response =>  response.json())
+        .then(data => {
+            if (!data.erro) {
+                document.querySelector('input[name="endereco"]').value = data.logradouro || '';
+                document.querySelector('input[name="bairro"]').value = data.bairro || '';
+                document.querySelector('input[name="cidade"]').value = data.localidade || '';
+                document.querySelector('input[name="estado"]').value = data.uf || '';
+            } else {
+                alert('CEP não encontrado!');
+            }
+        })
+        .catch(err => {
+            console.error('Erro ao buscar CEP:', err);
+        });
+    }
 
-document.querySelector('input[name="cep"]').addEventListener('blur', buscarCEP);
-</script>
-</body>
-</html>
-
+    document.querySelector('input[name="cep"]').addEventListener('blur', buscarCEP);
+    </script>
 </body>
 </html>
