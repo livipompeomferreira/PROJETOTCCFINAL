@@ -82,11 +82,10 @@ h1, h3 {
 
 .grid-item {
   flex: 1 1 300px;
-  max-width: 300px;
+  max-width: 350px;
   margin-left: 50px;
   position: relative;
-  width: 300px;
-  height: 380px;
+
   overflow: hidden;
   border-radius: 20px;
   text-decoration: none;

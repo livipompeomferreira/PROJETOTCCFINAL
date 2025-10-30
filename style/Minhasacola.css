@@ -1,180 +1,173 @@
 #abrirCarrinho {
-    margin: 20px;
-    padding: 10px 20px;
-    background:#1c2120;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+  margin: 20px;
+  padding: 10px 20px;
+  background:#1c2120;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    display: none;
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  display: none;
+  z-index: 100;
 }
 
 
 .carrinho {
-    position: fixed;
-    top: 0;
-    right: -400px;
-    width: 400px;
-    height: 100%;
-    background: white;
-    box-shadow: -4px 0 8px rgba(0,0,0,0.2);
-    transition: right 0.3s ease;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    z-index: 200;
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100%;
+  background: white;
+  box-shadow: -4px 0 8px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
 }
 
 .carrinho.aberto {
-    right: 0;
+  right: 0;
 }
 
 
 .carrinho-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .fechar {
-    cursor: pointer;
-    font-size: 20px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-
 .produto {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
 }
 
 .produto img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    margin-right: 10px;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
 .produto-info {
-    flex: 1;
+  flex: 1;
 }
 
 .produto-nome {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .produto-preco {
-    font-weight: bold;
-    margin-top: 5px;
+  font-weight: bold;
+  margin-top: 5px;
 }
 
 .qtd {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
 }
 
 .qtd button {
-    background: none;
-    border: 1px solid #ccc;
-    padding: 3px 8px;
-    cursor: pointer;
+  background: none;
+  border: 1px solid #ccc;
+  padding: 3px 8px;
+  cursor: pointer;
 }
 
 .barra-frete {
-    margin-top: 20px;
-    font-size: 14px;
+  margin-top: 20px;
+  font-size: 14px;
 }
 
 .progress {
-    background: #eee;
-    border-radius: 10px;
-    height: 8px;
-    overflow: hidden;
-    margin-top: 5px;
+  background: #eee;
+  border-radius: 10px;
+  height: 8px;
+  overflow: hidden;
+  margin-top: 5px;
 }
 
 .progress div {
-    background: #1c2120;
-    height: 100%;
-    width: 40%;
+  background: #1c2120;
+  height: 100%;
+  width: 40%;
 }
 
-
 .total {
-    margin-top: auto;
-    font-size: 16px;
+  margin-top: auto;
+  font-size: 16px;
 }
 
 .total-item {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
 }
 
 .btn-finalizar {
-    background: #1c2120;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    width: 100%;
+  background: #1c2120;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  width: 100%;
 }
 
 .btn-continuar {
-    background: none;
-    border: 1px solid #1c2120;
-    color: #1c2120;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 5px;
-    width: 100%;
+  background: none;
+  border: 1px solid #1c2120;
+  color: #1c2120;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 5px;
+  width: 100%;
 }
 
 .linha {
-            border: 30px  solid #1c2120;
-            border-bottom: 10px solid #1c2120;
-            outline: none;
-            padding: 10px 10px ;
-            width: 130px;
-            border-radius: 20px;
-            height: 20px;
-            font-weight: bold;
-             box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.244);
-            
-            
-        }
+  border: 30px  solid #1c2120;
+  border-bottom: 10px solid #1c2120;
+  outline: none;
+  padding: 10px 10px ;
+  width: 130px;
+  border-radius: 20px;
+  height: 20px;
+  font-weight: bold;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.244);
+}
 
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            text-align: center;
-        }
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  text-align: center;
+}
 
  .grid-item {
-     flex: 1 1 300px;
-    }
-
+    flex: 1 1 300px;
+}
 
 header {
   display: flex;
@@ -190,8 +183,6 @@ header {
   font-weight: bold;
 }
 
-
-
 .sobreheader {
   background-color: #1C2120;
   color: rgba(255, 255, 255, 0.87);
@@ -206,9 +197,7 @@ header {
 h1, h3 {
   text-align: center;
   font-weight: normal;
-  margin: 3px 0;
-  
-
+  margin: 3px 0;  
 }
 
 
@@ -216,8 +205,6 @@ h1, h3 {
   display: block;
   margin: 0 auto;
 }
-
-
 
 footer {
   background-color: #1c2120;

@@ -7,38 +7,34 @@ a {
 }
 
 .linha {
-    border: 30px  solid #1c2120;
-    border-bottom: 10px solid #1c2120;
-    outline: none;
-    padding: 10px 10px ;
-    width: 130px;
-    border-radius: 20px;
-    height: 20px;
-    font-weight: bold;
-      box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.244);
+  border: 30px  solid #1c2120;
+  border-bottom: 10px solid #1c2120;
+  outline: none;
+  padding: 10px 10px ;
+  width: 130px;
+  border-radius: 20px;
+  height: 20px;
+  font-weight: bold;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.244);
     
 }
 
 .grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  text-align: center;
 }
 
 .grid-item {
-    flex: 1 1 300px;
+  flex: 1 1 300px;
 }
 
 .banner, .section-title, .subtitulo {
-    text-align: center;
-
-      animation: glowIn 1.5s ease-out;
-      
+  text-align: center;
+  animation: glowIn 1.5s ease-out;   
 }
-
-
 
 .grid-itembr{
   transition: transform 0.3s ease;
@@ -94,11 +90,7 @@ h1, h3 {
   text-align: center;
   font-weight: normal;
   margin: 3px 0;
-  
-
 }
-
-
 
 .linha {
   border: none;
@@ -108,12 +100,10 @@ h1, h3 {
   width: 150px;
 }
 
-
 .logo {
   display: block;
   margin: 0 auto;
 }
-
 
 .grid {
   display: flex;
@@ -142,15 +132,12 @@ h1, h3 {
   transform: scale(1.01);
 }
 
-
-
 .main {
   flex-direction: column;
   align-items: left;
   gap: 20px; 
   margin: left;
 }
-
 
 .produto {
   background-color: #fff;
