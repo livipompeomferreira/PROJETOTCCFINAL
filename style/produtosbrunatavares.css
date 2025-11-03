@@ -49,6 +49,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  margin-bottom: 100px;
 }
 
 .produto {
