@@ -1,4 +1,3 @@
-// server.js
 import express from "express";
 import mysql from "mysql2/promise";
 import cors from "cors";
@@ -9,7 +8,6 @@ import bcrypt from "bcrypt";
 
 dotenv.config();
 
-// Configurações básicas
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -18,16 +16,10 @@ const PORT = 3000;
 
 // Middlewares
 app.use(express.json());
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type"],
-  })
-);
+app.use(cors());
 app.use(express.static(path.join(__dirname)));
 
-// Configuração do banco MySQL
+// Configuração MySQL
 const dbConfig = {
   host: process.env.DB_HOST || "localhost",
   user: process.env.DB_USER || "root",
@@ -35,7 +27,6 @@ const dbConfig = {
   database: process.env.DB_DATABASE || "makeup_site",
 };
 
-// Conexão com o banco
 let pool;
 async function conectarBanco() {
   try {
@@ -47,66 +38,38 @@ async function conectarBanco() {
 }
 conectarBanco();
 
-// Rota para exibir o cadastro.html
-app.get("/cadastro", (req, res) => {
-  res.sendFile(path.join(__dirname, "cadastro.html"));
-});
+// Rotas de páginas
+app.get("/cadastro", (req, res) => res.sendFile(path.join(__dirname, "cadastro.html")));
+app.get("/login", (req, res) => res.sendFile(path.join(__dirname, "login.html")));
+app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
 
-// Rota para cadastro de cliente
+// Cadastro de cliente
 app.post("/cadastro", async (req, res) => {
-  const {
-    nome,
-    cpf,
-    telefone,
-    cep,
-    endereco,
-    numero,
-    bairro,
-    cidade,
-    estado,
-    email,
-    senha,
-  } = req.body;
+  const { nome, cpf, telefone, cep, endereco, numero, bairro, cidade, estado, email, senha } = req.body;
 
   if (!nome || !email || !senha) {
-    return res
-      .status(400)
-      .json({ erro: "Nome, email e senha são obrigatórios!" });
+    return res.status(400).json({ erro: "Nome, email e senha são obrigatórios!" });
   }
 
   try {
-    // Criptografar a senha
     const hashedSenha = await bcrypt.hash(senha, 10);
 
-    // Inserir no banco
     const sqlInsert = `
       INSERT INTO clientes 
       (nome, cpf, telefone, cep, endereco, numero, bairro, cidade, estado, email, senha)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
-    await pool.execute(sqlInsert, [
-      nome,
-      cpf,
-      telefone,
-      cep,
-      endereco,
-      numero,
-      bairro,
-      cidade,
-      estado,
-      email,
-      hashedSenha,
-    ]);
+    await pool.execute(sqlInsert, [nome, cpf, telefone, cep, endereco, numero, bairro, cidade, estado, email, hashedSenha]);
 
-    res.status(201).json({ mensagem: "Cliente cadastrado com sucesso!" });
+    res.status(201).json({ sucesso: true, mensagem: "Cliente cadastrado com sucesso!", redirect: "/perfil.html" });
   } catch (err) {
     console.error("❌ Erro ao cadastrar cliente:", err);
     res.status(500).json({ erro: err.message });
   }
 });
 
-// Rota para login
+// Login
 app.post("/login", async (req, res) => {
   const { email, senha } = req.body;
 
@@ -115,31 +78,21 @@ app.post("/login", async (req, res) => {
   }
 
   try {
-    // Buscar usuário no banco
-    const [rows] = await pool.execute(
-      "SELECT * FROM clientes WHERE email = ?",
-      [email]
-    );
+    const [rows] = await pool.execute("SELECT * FROM clientes WHERE email = ?", [email]);
 
-    if (rows.length === 0) {
-      return res.status(401).json({ erro: "Email não cadastrado!" });
-    }
+    if (rows.length === 0) return res.status(401).json({ erro: "Email não cadastrado!" });
 
     const cliente = rows[0];
     const senhaCorreta = await bcrypt.compare(senha, cliente.senha);
 
-    if (!senhaCorreta) {
-      return res.status(401).json({ erro: "Senha incorreta!" });
-    }
+    if (!senhaCorreta) return res.status(401).json({ erro: "Senha incorreta!" });
 
-    res.json({ sucesso: true, cliente });
+    res.json({ sucesso: true, mensagem: "Login efetuado com sucesso!", redirect: "/index.html" });
   } catch (err) {
     console.error("❌ Erro no login:", err);
     res.status(500).json({ erro: err.message });
   }
 });
 
-// Inicialização do servidor
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
-});
+// Inicia servidor
+app.listen(PORT, () => console.log(`🚀 Servidor rodando em http://localhost:${PORT}`));

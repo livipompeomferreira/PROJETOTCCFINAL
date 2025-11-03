@@ -1,92 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Cadastro de Clientes</title>
-    <link rel="stylesheet" href="style/cadastro.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/icon (2).png">
+  <meta charset="UTF-8">
+  <title>Cadastro de Clientes</title>
+  <link rel="stylesheet" href="style/cadastro.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class="container">
-        <h1>Cadastro de Clientes</h1>
-      
-<form id="form-cadastro">
-    <input type="text" name="nome" placeholder="Nome" required>
-    <input type="text" name="cpf" placeholder="CPF">
-    <input type="text" name="telefone" placeholder="Telefone">
-    <input type="text" name="cep" placeholder="CEP">
-    <input type="text" name="endereco" placeholder="Endereço">
-    <input type="text" name="numero" placeholder="Número">
-    <input type="text" name="bairro" placeholder="Bairro">
-    <input type="text" name="cidade" placeholder="Cidade">
-    <input type="text" name="estado" placeholder="Estado">
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="password" name="senha" placeholder="Senha" required>
-    <button type="submit">Cadastrar</button>
-</form>
+  <div class="container">
+    <h1>Cadastro de Clientes</h1>
 
-<script>
-const form = document.getElementById("form-cadastro");
+    <form id="form-cadastro">
+      <input type="text" name="nome" placeholder="Nome" required>
 
-form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // evita recarregar a página
+      <input type="text" name="cpf" placeholder="CPF" maxlength="14">
+      <input type="text" name="telefone" placeholder="Telefone" maxlength="15">
 
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+      <input type="text" name="cep" placeholder="CEP">
+      <input type="text" name="endereco" placeholder="Endereço">
+      <input type="text" name="numero" placeholder="Número">
+      <input type="text" name="bairro" placeholder="Bairro">
+      <input type="text" name="cidade" placeholder="Cidade">
+      <input type="text" name="estado" placeholder="Estado">
 
-    try {
-        const res = await fetch("http://localhost:3000/cadastro", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <p class="register-link">
+      Já possui uma conta? <a href="login.html">Fazer login</a>
+    </p>
+  </div>
+
+  <script>
+    const form = document.getElementById("form-cadastro");
+
+    function validarCPF(cpf) {
+      // Remove caracteres não numéricos
+      cpf = cpf.replace(/\D/g, '');
+      if (cpf.length !== 11) return false;
+      return true; // Pode adicionar validação real se quiser
+    }
+
+    function validarTelefone(tel) {
+      // Remove caracteres não numéricos
+      tel = tel.replace(/\D/g, '');
+      return tel.length === 10 || tel.length === 11;
+    }
+
+    function formatarCPF(cpf) {
+      cpf = cpf.replace(/\D/g, '');
+      return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+    }
+
+    function formatarTelefone(tel) {
+      tel = tel.replace(/\D/g, '');
+      if (tel.length === 11) {
+        return tel.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+      } else if (tel.length === 10) {
+        return tel.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
+      }
+      return tel;
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      // Valida CPF e Telefone
+      if (data.cpf && !validarCPF(data.cpf)) {
+        alert("CPF inválido! Use apenas números (11 dígitos).");
+        return;
+      }
+      if (data.telefone && !validarTelefone(data.telefone)) {
+        alert("Telefone inválido! Use 10 ou 11 dígitos.");
+        return;
+      }
+
+      // Formata CPF e Telefone
+      if (data.cpf) data.cpf = formatarCPF(data.cpf);
+      if (data.telefone) data.telefone = formatarTelefone(data.telefone);
+
+      try {
+        const res = await fetch("/cadastro", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
         });
 
         const result = await res.json();
+        console.log("Status:", res.status, "Resultado:", result);
 
         if (res.ok) {
-            alert(result.mensagem); // sucessohttp://localhost:3000/cadastro
-
-            form.reset();
+          alert(result.mensagem || "Cadastro realizado com sucesso!");
+          form.reset();
+          if (result.redirect) window.location.href = result.redirect;
+        } else if (result.erro) {
+          alert("Erro: " + result.erro);
         } else {
-            alert("Erro: " + result.erro);
+          alert("Erro desconhecido! Status: " + res.status);
         }
-    } catch (err) {
+      } catch (err) {
         console.error("Erro ao enviar cadastro:", err);
         alert("Erro ao enviar cadastro.");
-    }
-});
-</script>
+      }
+    });
 
-
-
-           <p class="register-link">já possui uma conta? <a href="perfil.html">fazer login</a></p>
-    </div>
-    </div>
-
-    <script>
     function buscarCEP() {
-        const cep = document.querySelector('input[name="cep"]').value.replace(/\D/g, '');
-        if (cep.length !== 8) return;
+      const cep = document.querySelector('input[name="cep"]').value.replace(/\D/g, '');
+      if (cep.length !== 8) return;
 
-        fetch(`https://viacep.com.br/ws/${cep}/json/`)
-        .then(response =>  response.json())
+      fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => response.json())
         .then(data => {
-            if (!data.erro) {
-                document.querySelector('input[name="endereco"]').value = data.logradouro || '';
-                document.querySelector('input[name="bairro"]').value = data.bairro || '';
-                document.querySelector('input[name="cidade"]').value = data.localidade || '';
-                document.querySelector('input[name="estado"]').value = data.uf || '';
-            } else {
-                alert('CEP não encontrado!');
-            }
-        })
-        .catch(err => {
-            console.error('Erro ao buscar CEP:', err);
-        });
+          if (!data.erro) {
+            document.querySelector('input[name="endereco"]').value = data.logradouro || '';
+            document.querySelector('input[name="bairro"]').value = data.bairro || '';
+            document.querySelector('input[name="cidade"]').value = data.localidade || '';
+            document.querySelector('input[name="estado"]').value = data.uf || '';
+          } else {
+            alert('CEP não encontrado!');
+          }
+        }).catch(err => console.error('Erro ao buscar CEP:', err));
     }
 
     document.querySelector('input[name="cep"]').addEventListener('blur', buscarCEP);
-    </script>
+  </script>
 </body>
 </html>
