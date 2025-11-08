@@ -100,6 +100,7 @@ h1, h3 {
   text-decoration: none;
   color: #000;
   transition: transform 0.3s ease;
+  box-shadow: #1C2120 2px 5px 15px;
 }
 
 .grid-item img {
@@ -290,9 +291,7 @@ footer img {
   right: 0;
 }
 
-/* --------------------------- */
-/* 🔹 MEDIA QUERIES RESPONSIVAS */
-/* --------------------------- */
+
 
 /* Tablets */
 @media (max-width: 992px) {
@@ -351,7 +350,7 @@ footer img {
   }
 }
 
-/* SEÇÕES DE TEXTO (sobre / diferenciais) */
+
 .sobre, .diferenciais {
   max-width: 1000px;
   text-align: center;
