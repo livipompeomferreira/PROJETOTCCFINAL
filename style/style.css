@@ -275,3 +275,93 @@ footer img {
 .grid-item:hover .info-card {
   right: 0;
 }
+
+/* Ajustes para TELAS MÉDIAS (Tablets e Notebooks menores: até 900px de largura) */
+@media (max-width: 900px) {
+    
+    /* Cabeçalho (Header): Ajusta para empilhar itens */
+    header {
+        flex-direction: column; 
+        padding: 10px;
+        gap: 15px; 
+    }
+
+    /* Logo: Permite ajuste de tamanho */
+    .logo {
+        height: auto; 
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    /* Linha (Elemento de Destaque/Menu): Ocupa mais espaço e centraliza */
+    .linha {
+        margin: 5px auto; 
+        width: 80%; 
+    }
+
+    /* Grid (Containers de Itens) */
+    .grid {
+        gap: 25px; 
+    }
+
+    /* Itens Individuais da Grid */
+    .grid-item {
+        margin-left: 0; /* Remove margem que atrapalha o alinhamento central */
+        max-width: 400px; 
+        flex: 1 1 45%; /* Permite 2 itens por linha na maioria dos tablets */
+    }
+
+    /* Rodapé (Footer): Alinhamento central para tablets */
+    .footer-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+
+
+/* Ajustes para TELAS PEQUENAS (Celulares: até 550px de largura) */
+@media (max-width: 550px) {
+    
+    /* Corpo (Body) e Textos */
+    body {
+        padding: 0 10px; 
+    }
+
+    h1, h3 {
+        font-size: 1.2em; /* Reduz o tamanho da fonte */
+    }
+
+    /* Grid: Empilhamento dos itens */
+    .grid {
+        gap: 20px;
+        margin: 20px 0;
+        /* Altera a estrutura para que os itens usem 100% da largura */
+        grid-template-columns: 1fr; 
+    }
+
+    .grid-item {
+        max-width: 95%; /* Ocupa quase a largura total da tela */
+        flex: 1 1 95%; 
+        margin: 0 auto; /* Centraliza o item individual */
+    }
+
+    .grid-item img {
+        max-width: 100%; 
+    }
+    
+    /* Footer: Empilhamento total para celular */
+    .footer-container {
+        flex-direction: column; 
+    }
+
+    .footer-column {
+        min-width: 100%;
+    }
+    
+    /* Botões e Linhas de input */
+    .linha {
+        width: 90%;
+        margin: 5px auto;
+    }
+}
