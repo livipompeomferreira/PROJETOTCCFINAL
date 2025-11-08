@@ -1,29 +1,21 @@
 {
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "mysql2": "^3.15.1"
-  },
   "name": "projetotccfinal",
   "version": "1.0.0",
-  "description": "",
+  "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mclarxvzz8/PROJETOTCCFINAL.git"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Mclarxvzz8/PROJETOTCCFINAL/issues"
-  },
-  "homepage": "https://github.com/Mclarxvzz8/PROJETOTCCFINAL#readme",
-  "devDependencies": {
-    "nodemon": "^3.1.10"
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mssql": "^10.0.4",
+    "mysql2": "^3.15.3",
+    "tedious": "^14.7.0"
   }
 }
