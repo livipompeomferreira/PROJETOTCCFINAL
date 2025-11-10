@@ -1,39 +1,41 @@
-@import url(
-'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 
+/* LINKS */
 a {
   color: #000;
   text-decoration: none;
 }
 
+/* INPUT */
 .linha {
-  border-bottom: 10px solid #1c2120;
+  border: none;
   outline: none;
-  padding: 5px;
+  padding: 5px 10px;
   width: 130px;
   border-radius: 20px;
-  height: 20px;
+  height: 30px;
   font-weight: bold;
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.244);
-  border: none;
 }
 
+/* GRID DE PRODUTOS */
 .grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
   text-align: center;
   padding: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   margin: 40px 0;
 }
 
+/* TÍTULOS */
 .banner, .section-title, .subtitulo {
   text-align: center;
   animation: glowIn 1.5s ease-out;
 }
 
+/* BODY */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -43,6 +45,7 @@ body {
   align-items: center;
 }
 
+/* CABEÇALHO */
 header {
   display: flex;
   justify-content: space-around;
@@ -53,7 +56,7 @@ header {
   box-sizing: border-box;
   background-color: #fff;
   gap: 20px;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #ccc;
   font-weight: bold;
 }
 
@@ -63,49 +66,56 @@ header {
   height: 30px;
   width: 100%;
   text-decoration: underline;
+  text-align: center;
+  line-height: 30px;
 }
 
+/* TEXTOS */
 h1, h3 {
   text-align: center;
   font-weight: normal;
   margin: 3px 0;
 }
 
-.logo{
-  height: 150px;
-}
-
-.logo img{
+/* LOGO */
+.logo {
+  height: 120px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
+.logo img {
+  max-height: 100%;
+  width: auto;
+}
+
+/* ITENS DA GRADE */
 .grid-item {
   flex: 1 1 300px;
   max-width: 350px;
-  margin-left: 50px;
   position: relative;
-
   overflow: hidden;
   border-radius: 20px;
   text-decoration: none;
   color: #000;
   transition: transform 0.3s ease;
+  box-shadow: #1C2120 2px 5px 15px;
 }
 
 .grid-item img {
-  max-width: 300px;
+  width: 100%;
   height: auto;
   transition: transform 0.3s ease;
   border-radius: 20px;
   box-shadow: 2px 5px 15px #000;
-  margin-top: 20px;
 }
 
 .grid-item img:hover {
-  transform: scale(1.01);
+  transform: scale(1.03);
 }
 
+/* BANNER */
 .banner {
   width: 100%;
   max-width: 1800px;
@@ -113,11 +123,13 @@ h1, h3 {
 }
 
 .banner img {
+  width: 100%;
+  height: auto;
   transition: 1s;
   border-radius: 20px;
 }
 
-.banner img:hover{
+.banner img:hover {
   transform: scale(1.01);
 }
 
@@ -125,6 +137,7 @@ h1, h3 {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+/* RODAPÉ */
 footer {
   background-color: #1c2120;
   color: white;
@@ -142,6 +155,7 @@ footer ul {
   margin: 10px 0 0 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 15px;
 }
 
@@ -159,10 +173,6 @@ footer a:hover {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
-}
-
-.footer2 {
-  text-align: center;
 }
 
 .footer-column {
@@ -209,6 +219,7 @@ footer a:hover {
   border: none;
 }
 
+/* BOTÕES */
 button {
   background-color: #1c2120;
   color: #fff;
@@ -218,36 +229,40 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  opacity: 0.9;
+}
+
+/* ÍCONES */
 footer img {
   margin: 5px;
 }
 
-.social-media img{
+.social-media img {
   width: 40px;
   height: 40px;
 }
 
-.crueldade{
+/* SEÇÃO CRUELDADE */
+.crueldade {
   display: flex;
   justify-content: center;
-  align-items: right;
+  align-items: center;
   text-align: center;
   padding: 20px;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
-.banner, .section-title {
-  text-align: center;
-  font-weight: bold;
+/* ANIMAÇÕES */
+@keyframes glowIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-
-.grid-item:hover {
-  transform: scale(1.03);
-}
-
+/* CARTÕES COM ANIMAÇÃO */
 .image-container img {
-  width: 270px;
+  width: 100%;
   transition: transform 0.5s ease;
 }
 
@@ -274,4 +289,87 @@ footer img {
 
 .grid-item:hover .info-card {
   right: 0;
+}
+
+
+
+/* Tablets */
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .grid {
+    gap: 20px;
+  }
+
+  .grid-item {
+    max-width: 45%;
+    margin: 0;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .logo {
+    height: 90px;
+  }
+
+  .grid-item {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+
+  .banner img {
+    border-radius: 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .crueldade {
+    flex-direction: column;
+  }
+}
+
+
+.sobre, .diferenciais {
+  max-width: 1000px;
+  text-align: center;
+  margin: 40px auto;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.sobre h1, .diferenciais h1, .diferenciais h2 {
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.diferencial {
+  background: #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px auto;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
 }

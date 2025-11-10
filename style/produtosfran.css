@@ -245,6 +245,9 @@ video {
   gap: 40px; 
   align-items: flex-start;
   justify-content: space-between;
+  box-shadow: #1C2120 2px 5px 15px;
+  border-radius: 20px;
+  padding: 20px; 
 }
   
 .nome-biografia {
