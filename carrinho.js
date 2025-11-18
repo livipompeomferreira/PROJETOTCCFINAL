@@ -1,6 +1,6 @@
 const CARRINHO_KEY = 'carrinhoDeCompras';
 
-// --- Funções de Persistência (As mesmas usadas no produtos.html) ---
+
 
 const getCarrinho = () => {
     const carrinhoJson = localStorage.getItem(CARRINHO_KEY);
@@ -11,7 +11,7 @@ const salvarCarrinho = (carrinho) => {
     localStorage.setItem(CARRINHO_KEY, JSON.stringify(carrinho));
 };
 
-// --- Funções de Utilitário e Cálculo ---
+
 
 const formatarPreco = (valor) => {
     return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -25,14 +25,14 @@ const calcularTotal = (carrinho) => {
     return total;
 };
 
-// --- Funções de Modificação do Carrinho ---
+
 
 const removerItem = (idDoItem) => {
     let carrinho = getCarrinho();
     carrinho = carrinho.filter(item => item.id !== idDoItem);
 
     salvarCarrinho(carrinho);
-    renderizarCarrinho(); // Atualiza a interface
+    renderizarCarrinho(); 
 };
 
 const atualizarQuantidade = (idDoItem, novaQuantidade) => {
@@ -44,11 +44,11 @@ const atualizarQuantidade = (idDoItem, novaQuantidade) => {
     if (item) {
         item.quantidade = novaQuantidade;
         salvarCarrinho(carrinho);
-        renderizarCarrinho(); // Atualiza a interface
+        renderizarCarrinho(); 
     }
 };
 
-// --- Funções de Renderização e Eventos ---
+
 
 const criarItemHTML = (item) => {
     const divItem = document.createElement('div');
@@ -72,13 +72,13 @@ const criarItemHTML = (item) => {
         <button class="remover-item-btn" data-id="${item.id}">Remover</button>
     `;
 
-    // 1. Botão Remover
+   
     divItem.querySelector('.remover-item-btn').addEventListener('click', (e) => {
         const idParaRemover = parseInt(e.target.dataset.id);
         removerItem(idParaRemover);
     });
 
-    // 2. Botões de Quantidade (+ / -)
+   
     divItem.querySelectorAll('.mudar-qtd-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const idItem = parseInt(e.target.dataset.id);
@@ -104,7 +104,7 @@ const finalizarCompra = () => {
     if (carrinho.length > 0) {
         alert(`🎉 Compra Finalizada! O total foi de ${formatarPreco(calcularTotal(carrinho))}. Obrigado!`);
         
-        // Limpa o carrinho
+      
         salvarCarrinho([]);
         renderizarCarrinho(); 
         
@@ -133,14 +133,14 @@ const renderizarCarrinho = () => {
     totalElement.textContent = formatarPreco(total);
 };
 
-// --- Inicialização da Página ---
+
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Renderiza os itens no carregamento
+   
     renderizarCarrinho();
 
-    // Adiciona o evento de Finalizar Compra
+   
     const finalizarBtn = document.getElementById('finalizar-compra-btn');
     if (finalizarBtn) {
         finalizarBtn.addEventListener('click', finalizarCompra);
