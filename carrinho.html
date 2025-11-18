@@ -1,109 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="assets/icon (2).png">
-  <link rel="stylesheet" href="style/carrinho.css">
-  <title>Carrinho de Compras</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/icon (2).png">
+    
+    <link rel="stylesheet" href="style/carrinho.css">
+    
+    <link rel="stylesheet" href="style/style.css"> 
+    
+    <title>Carrinho de Compras</title>
 </head>
 <body>
 
-  <!-- Header principal -->
-  <header>
-    <!-- Busca -->
-    <section>
-      <div class="search-box">
-        <img src="assets/ICONES/Lupa.png" alt="Buscar" height="25px">
-        <input id="Carrinho" type="text" placeholder="O que procura?" class="linha"/>
-      </div>
-    </section>
-
-    <!-- Logo -->
-    <section class="logo-section">
-      <a href="index.html">
-        <img src="./assets/LOGO SITE PNG.png" alt="Logo" class="logo">
-      </a>
-    </section>
-
-    <!-- Perfil + Carrinho -->
-    <section>
-      <div class="icons">
-        <a href="perfil.html">
-          <img src="assets/ICONES/perfil.png" alt="Perfil" height="40px">
-        </a>
-        <a href="carrinho.html">
-          <img src="assets/ICONES/Carrinho.png" alt="Carrinho" height="40px">
-        </a>
-      </div>
-    </section>
-  </header>
-
-  <h1>Meu Carrinho</h1>
-
-  <main class="carrinho-container">
-    <div class="carrinho-item">
-      <img src="./assets/Designer para o tcc/PRODUTOS DIMENSÕES CORRETAS/BT Plush Mauve 8.1  1.png" alt="BT Plush Mauve">
-      <div class="detalhes">
-        <h3>BT Plush Mauve</h3>
-        <p>R$ 59,90</p>
-        <p>Quantidade: 1</p>
-      </div>
-      <button>Remover</button>
+    <div class="sobreheader">
+        <h3>10% de desconto na primeira compra com cupom</h3>
     </div>
 
-    <div class="carrinho-item">
-      <img src="assets/Designer para o tcc/PRODUTOS DIMENSÕES CORRETAS/Esponja Para Maquiagem 9.1 1.png" alt="Esponja para maquiagem">
-      <div class="detalhes">
-        <h3>Esponja para maquiagem</h3>
-        <p>R$ 39,90</p>
-        <p>Quantidade: 1</p>
-      </div>
-      <button>Remover</button>
-    </div>
+    <header>
+        <section>   
+            <div>
+                <p>
+                    <img src="assets/ICONES/Lupa.png" height="30px">
+                    <input id="Carrinho" type="text" placeholder="O que procura?" class="linha"/>
+                </p>
+            </div>
+        </section>
+        <section>
+            <div>
+                <a href="index.html">
+                    <img src="./assets/LOGO SITE PNG.png" class="logo">
+                </a>
+            </div>
+        </section>
+        <section>
+            <div>
+                <a href="perfil.html">
+                    <img src="assets/ICONES/perfil.png"height="40px">
+                </a>
+                <a href="carrinho.html">
+                    <img src="assets/ICONES/Carrinho.png" height="40px" id="icone-carrinho">
+                </a>
+            </div>
+        </section>
+    </header>
 
-    <!-- Resumo da compra -->
-    <div class="carrinho-total">
-      <h2>Resumo da Compra</h2>
-      <p>Total: R$ 99,80</p>
-      <button>Finalizar Compra</button>
-    </div>
-  </main>
+    <h1>Meu Carrinho</h1>
 
-  <!-- Footer -->
-  <footer>
-    <section class="footer-container">
-      <div class="footer-column">
-        <h2>By Makeup.com</h2>
-        <nav class="social-media">
-          <a href="#" aria-label="Instagram">
-            <img src="./assets/Designer para o tcc/ICONES/logo instagram branco-sem fundo.png" alt="Instagram">
-          </a>
-          <a href="#" aria-label="Facebook">
-            <img src="./assets/Designer para o tcc/ICONES/logo facebook branco-sem fundo.png" alt="Facebook">
-          </a>
-        </nav>
-      </div>
-      <div class="footer-column">
-        <h3>Precisa de ajuda?</h3>
-        <ul>
-          <li><a href="Políticadeprivacidade.html">Política de privacidade</a></li>
-          <li><a href="Políticadetrocasedevoluções.html">Política de trocas e devoluções</a></li>
-          <li><a href="Políticadeentrega.html">Política de entrega</a></li>
-          <li><a href="Faleconosco.html">Fale conosco</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>Atendimento</h3>
-        <p><a href="QuemSomos.html">Quem somos?</a></p>
-        <p>E-mail: <a href="mailto:atendimento@makeup.com">atendimento@makeup.com</a></p>
-        <p>Segunda a Sexta-feira, das 9h às 18h</p>
-      </div>
-    </section>
+    <main class="carrinho-container">
+        <div id="itens-do-carrinho-container">
+            </div>
 
-    <section class="footer-bottom">
-      <img src="./assets/Designer para o tcc/ICONES/Formas de pagamento branco-sem fundo.png" alt="Formas de pagamento" width="550px">
-    </section>
-  </footer>
+        <div class="carrinho-total">
+            <h2>Resumo da Compra</h2>
+            <p>Total: <span id="carrinho-total-valor">R$ 0,00</span></p>
+            <button id="finalizar-compra-btn">Finalizar Compra</button>
+        </div>
+    </main>
+
+    <footer>
+        <section class="footer-container">
+            <div class="footer-column">
+                <h2>By Makeup.com</h2>
+                <nav class="social-media">
+                    <a href="#" aria-label="Instagram">
+                        <img src="./assets/Designer para o tcc/ICONES/logo instagram branco-sem fundo.png" alt="Instagram">
+                    </a>
+                    <a href="#" aria-label="facebook">
+                        <img src="./assets/Designer para o tcc/ICONES/logo facebook branco-sem fundo.png" alt="facebook">
+                    </a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h3>Precisa de ajuda?</h3>
+                <ul>
+                    <li><a href="Políticadeprivacidade.html">Política de privacidade</a></li>
+                    <li><a href="Políticadetrocasedevoluções.html">Política de trocas e devoluções</a></li>
+                    <li><a href="Políticadeentrega.html">Política de entrega</a></li>
+                    <li><a href="Faleconosco.html">Fale conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Atendimento</h3>
+                <p><a href="QuemSomos.html">Quem somos?</a></p>
+                <p>E-mail: <a href="mailto:atendimento@makeup.com">atendimento@makeup.com</a></p>
+                <p>Segunda a Sexta-feira, das 9h às 18h</p>
+            </div>
+        </section>
+        <section class="footer-bottom">
+            <img src="./assets/Designer para o tcc/ICONES/Formas de pagamento branco-sem fundo.png" alt="Visa" width="550px" >
+        </section>
+    </footer>
+    
+    <script src="carrinho.js"></script>
 </body>
 </html>
