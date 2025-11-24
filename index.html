@@ -29,15 +29,29 @@
             </div>
         </section>
         <section>
-            <div>
-                <a href="perfil.html">
-                <img src="assets/ICONES/perfil.png"height="40px">
-                </a>
-                <a href="carrinho.html">
-                <img src="assets/ICONES/Carrinho.png" height="40px">
-                </a>
-            </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+              <a href="perfil.html">
+                  <img src="assets/ICONES/perfil.png" height="40px">
+              </a>
+        
+              <!-- AQUI aparece o nome -->
+              <span id="nomeClienteHeader" style="font-size: 16px; font-weight: bold;"></span>
+        
+              <a href="carrinho.html">
+                  <img src="assets/ICONES/Carrinho.png" height="40px">
+              </a>
+          </div>
+        
+          <script>
+              const nome = localStorage.getItem("nomeCliente");
+        
+              if (nome) {
+                document.getElementById("nomeClienteHeader").textContent = nome;
+              }
+          </script>
         </section>
+        
+            
     </header>
     <main>
         <h1>Com as ofertas e promoções na makeup.com você encontra tudo o que precisa</h1>
@@ -110,7 +124,7 @@
         </section>
     </main>
     <footer>
-        <link rel="stylesheet" href="footer.css">
+        <link rel="stylesheet" href="style/footer.css">
         <section class="footer-container">
           <div class="footer-column">
             <h2>By Makeup.com</h2>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="icon" href="assets/icon (2).png">
+  <link rel="icon" href="assets/icon (2).png">
   <title>Login</title>
   <link rel="stylesheet" href="style/perfil.css">
 </head>
@@ -46,11 +46,21 @@
         console.log("Status:", res.status, "Resultado:", data);
 
         if (res.ok && data.sucesso) {
-          // Sempre mostra mensagem, mesmo que undefined
+          
+          // ⭐ Salva o nome do cliente para aparecer no index
+          if (data.nome) {
+            localStorage.setItem("nomeCliente", data.nome);
+          }
+
           alert(data.mensagem || "Login efetuado com sucesso!");
-          if (data.redirect) window.location.href = data.redirect;
+
+          if (data.redirect) {
+            window.location.href = data.redirect;
+          }
+
         } else if (data.erro) {
           alert("Erro: " + data.erro);
+
         } else {
           alert("Erro desconhecido! Status: " + res.status);
         }

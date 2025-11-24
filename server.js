@@ -70,6 +70,7 @@ app.post("/cadastro", async (req, res) => {
 });
 
 // Login
+// Login
 app.post("/login", async (req, res) => {
   const { email, senha } = req.body;
 
@@ -87,12 +88,19 @@ app.post("/login", async (req, res) => {
 
     if (!senhaCorreta) return res.status(401).json({ erro: "Senha incorreta!" });
 
-    res.json({ sucesso: true, mensagem: "Login efetuado com sucesso!", redirect: "/index.html" });
+    res.json({
+      sucesso: true,
+      mensagem: "Login efetuado com sucesso!",
+      nome: cliente.nome,   // 👈 manda o nome do cliente
+      redirect: "/index.html"
+    });
+
   } catch (err) {
     console.error("❌ Erro no login:", err);
     res.status(500).json({ erro: err.message });
   }
 });
+
 
 // Inicia servidor
 app.listen(PORT, () => console.log(`🚀 Servidor rodando em http://localhost:${PORT}`));
